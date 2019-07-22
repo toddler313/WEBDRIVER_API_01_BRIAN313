@@ -21,9 +21,19 @@ public class CheckEnvironment {
 
 	@Test
 	public void TC_01() {
-		System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");
+//		System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");
 		String homePageTitle = driver.getTitle();
 		Assert.assertEquals("Home page", homePageTitle);
+	}
+
+	@Test
+	public void TC_02() {
+
+	}
+
+	@Test
+	public void TC_03() {
+
 	}
 
 	@AfterClass
