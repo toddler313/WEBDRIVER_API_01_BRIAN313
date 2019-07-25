@@ -25,6 +25,16 @@ public class Topic03_WebBrowser_Commands {
 		String homePageTitle = driver.getTitle();
 		Assert.assertEquals("Home page", homePageTitle);
 	}
+	
+	@Test
+	public void TC_02() {
+
+	}
+
+	@Test
+	public void TC_03() {
+
+	}
 
 	@AfterClass
 	public void afterClass() {
