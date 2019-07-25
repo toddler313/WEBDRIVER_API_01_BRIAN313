@@ -36,7 +36,7 @@ public class Topic02_xpath_css {
 		driver.findElement(By.xpath("//div[@class='LoginButtonContainer']//div[contains(text(), 'Login')]")).click();
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
+		      
 		pageTitle = driver.getTitle(); 
 		Assert.assertEquals("Membrain for Membrain for Truong", pageTitle);
 		
