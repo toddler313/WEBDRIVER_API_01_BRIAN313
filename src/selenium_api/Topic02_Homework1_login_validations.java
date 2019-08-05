@@ -16,6 +16,7 @@ public class Topic02_Homework1_login_validations {
 
 	@BeforeClass
 	public void beforeClass() {
+		System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.get("http://live.guru99.com");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -71,6 +72,13 @@ public class Topic02_Homework1_login_validations {
 
 		pageTitle = driver.getTitle();
 		Assert.assertEquals("Create New Customer Account", pageTitle);
+		//OR Assert True
+		Assert.assertTrue(driver.getTitle().equals("Create New Customer Account"));
+		
+		//BACK
+		driver.navigate().back(); //IF FORWARD, simply driver.navigate().forward();
+		
+		
 	}
 
 	@AfterClass
