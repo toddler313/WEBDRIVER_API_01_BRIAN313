@@ -3,6 +3,8 @@ package selenium_api;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -18,6 +20,8 @@ public class Topic02_Homework1_login_validations {
 	public void beforeClass() {
 		System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");
 		driver = new FirefoxDriver();
+		driver.manage().window().setSize(new Dimension(1024, 768));
+		driver.manage().window().setPosition(new Point(100, 50));
 		driver.get("http://live.guru99.com");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
