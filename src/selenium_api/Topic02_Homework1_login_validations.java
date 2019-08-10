@@ -3,6 +3,8 @@ package selenium_api;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -16,7 +18,10 @@ public class Topic02_Homework1_login_validations {
 
 	@BeforeClass
 	public void beforeClass() {
+		System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");
 		driver = new FirefoxDriver();
+		driver.manage().window().setSize(new Dimension(1024, 768));
+		driver.manage().window().setPosition(new Point(100, 50));
 		driver.get("http://live.guru99.com");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
@@ -71,10 +76,13 @@ public class Topic02_Homework1_login_validations {
 
 		pageTitle = driver.getTitle();
 		Assert.assertEquals("Create New Customer Account", pageTitle);
-		
-		//BACK
-		driver.navigate().back();
+		// OR Assert True
+		Assert.assertTrue(driver.getTitle().equals("Create New Customer Account"));
+
+		// BACK
+		driver.navigate().back(); // IF FORWARD, simply driver.navigate().forward();
 		Assert.assertTrue(driver.getCurrentUrl().equals("http://live.guru99.com/index.php/customer/account/login/"));
+
 	}
 
 	@AfterClass

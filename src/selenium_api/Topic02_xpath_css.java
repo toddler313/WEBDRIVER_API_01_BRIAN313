@@ -15,6 +15,7 @@ public class Topic02_xpath_css {
 
 	@BeforeClass
 	public void beforeClass() {
+		System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.get("https://truong.membrain.com/Login.aspx");
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -23,7 +24,6 @@ public class Topic02_xpath_css {
 
 	@Test
 	public void TC_01_Login() {
-//		System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");
 		String pageTitle = driver.getTitle();
 		Assert.assertEquals("Membrain", pageTitle);
 
@@ -39,7 +39,8 @@ public class Topic02_xpath_css {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		pageTitle = driver.getTitle();
-		Assert.assertEquals("Membrain for Membrain for Truong", pageTitle);
+//		Assert.assertEquals("Membrain for Truong", pageTitle);
+		Assert.assertTrue(driver.getTitle().equals("Membrain for Truong"));
 
 	}
 
