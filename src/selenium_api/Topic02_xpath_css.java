@@ -33,8 +33,9 @@ public class Topic02_xpath_css {
 
 //		driver.findElement(By.xpath("/html/body/div/form/div[1]/div[2]/div[1]/div[2]/table/tbody/tr/td[1]/div")).click();
 //		driver.findElement(By.xpath("//div[@class='LoginButtonContainer']//div[@class='Button GreenButton']")).click();
-		driver.findElement(By.xpath("//div[@class='LoginButtonContainer']//div[contains(text(), 'Login')]")).click();
-
+//		driver.findElement(By.xpath("//div[@class='LoginButtonContainer']//div[contains(text(), 'Login')]")).click();
+		driver.findElement(By.xpath("//div[@class='LoginButtonContainer']//div[text()='Login']")).click();
+		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		pageTitle = driver.getTitle();

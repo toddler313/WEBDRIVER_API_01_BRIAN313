@@ -71,6 +71,10 @@ public class Topic02_Homework1_login_validations {
 
 		pageTitle = driver.getTitle();
 		Assert.assertEquals("Create New Customer Account", pageTitle);
+		
+		//BACK
+		driver.navigate().back();
+		Assert.assertTrue(driver.getCurrentUrl().equals("http://live.guru99.com/index.php/customer/account/login/"));
 	}
 
 	@AfterClass
